@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines unittests for console.py.
+
 Unittest classes:
     TestHBNBCommand_prompting
     TestHBNBCommand_help
@@ -1133,7 +1134,7 @@ class TestHBNBCommand_update(unittest.TestCase):
         correct = "** value missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create BaseModel")
-testId = output.getvalue().strip()
+            testId = output.getvalue().strip()
         with patch("sys.stdout", new=StringIO()) as output:
             testCmd = "BaseModel.update({}, attr_name)".format(testId)
             self.assertFalse(HBNBCommand().onecmd(testCmd))
